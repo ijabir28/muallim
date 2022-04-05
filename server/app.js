@@ -1,11 +1,16 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
 
-app.get('/', (req, res) => {
-    res.send('Welcome to Muallim API!')
-})
+async function create_app() {
+    const app = express();
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: false }));
+
+    app.get('/', (req, res) => {
+        res.send('Welcome to Muallim API!')
+    })
+
+    return app;
+}
+
+module.exports = {create_app};

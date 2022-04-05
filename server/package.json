@@ -4,11 +4,14 @@
   "description": "backend server of muallim",
   "main": "app.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "jest"
   },
   "author": "ijabir",
   "license": "ISC",
   "dependencies": {
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3"
   }
 }
