@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "backend server of muallim",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "jest"
   },
