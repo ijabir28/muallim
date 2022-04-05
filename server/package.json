@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "backend server of muallim",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "ijabir",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
