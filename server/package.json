@@ -1,17 +1,22 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "backend server of muallim",
-  "main": "app.js",
+  "name": "muallim",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "jest"
+    "start:watch": "nodemon ./bin/www"
   },
-  "author": "ijabir",
-  "license": "ISC",
   "dependencies": {
-    "debug": "^4.3.4",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.2.1",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
   }
 }
