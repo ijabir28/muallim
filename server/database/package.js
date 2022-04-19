@@ -24,7 +24,7 @@ async function create_package_database({client}) {
     }
 
     /**
-     * @constructor
+     * @method
      * @param {string}_id
      * @returns {Promise<package>}
      */

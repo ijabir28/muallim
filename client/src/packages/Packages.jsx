@@ -65,7 +65,7 @@ function Packages() {
                                             <div className="col-lg-4" key={pckg._id}>
                                                 <div className="card">
                                                     <img
-                                                        src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
+                                                        src={pckg.img_url} alt="makkah_img"
                                                         className="card-img-top"
                                                         alt="Waterfall"
                                                     />
@@ -79,7 +79,7 @@ function Packages() {
                                                                 {pckg.price}
                                                             </b>
                                                         </p>
-                                                        <a href="#!" className="btn btn-primary">Button</a>
+                                                        <a href="#!" className="btn btn-primary">Contact Us</a>
                                                     </div>
                                                 </div>
                                             </div>
