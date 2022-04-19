@@ -1,5 +1,10 @@
 const jwt = require("jsonwebtoken");
 
+/**
+ * @constructor
+ * @param user_database
+ * @return {{add: ((function({first_name: *, last_name: *, username: *, password: *}): Promise<void>)|*), authenticate: ((function(*): Promise<*|undefined>)|*), is_logged_in: (function({token: *}): *), is_logged_in_as_admin: ((function({token: *}): Promise<void>)|*)}}
+ */
 function create_user_service({user_database}) {
     return {
         authenticate,
@@ -8,10 +13,21 @@ function create_user_service({user_database}) {
         add
     };
 
+    /**
+     * @method
+     * @param user
+     * @param given_password
+     * @return {boolean}
+     */
     function is_valid_user({user, given_password}) {
         return user && user.password === given_password;
     }
 
+    /**
+     * @method
+     * @param given_user
+     * @return {Promise<*>}
+     */
     async function authenticate(given_user) {
         const user = await user_database.find_one({username: given_user.username});
 
@@ -31,10 +47,20 @@ function create_user_service({user_database}) {
         }
     }
 
+    /**
+     * @method
+     * @param token
+     * @return {*}
+     */
     function is_logged_in({token}) {
         return jwt.verify(token, process.env.JWT_SECRET);
     }
 
+    /**
+     * @method
+     * @param token
+     * @return {Promise<void>}
+     */
     async function is_logged_in_as_admin({token}) {
         const {username} = jwt.verify(token, process.env.JWT_SECRET);
         // console.log({username});
@@ -46,6 +72,14 @@ function create_user_service({user_database}) {
         }
     }
 
+    /**
+     * @method
+     * @param first_name
+     * @param last_name
+     * @param username
+     * @param password
+     * @return {Promise<void>}
+     */
     async function add({first_name, last_name, username, password}) {
         const user = await user_database.find_one({username});
         // console.log({user});

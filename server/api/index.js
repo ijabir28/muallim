@@ -4,6 +4,11 @@ const create_user_router = require('./user');
 const create_admin_router = require('./admin');
 const create_package_router = require('./package');
 
+/**
+ * @constructor
+ * @param controllers
+ * @returns {Router}
+ */
 function create_api({controllers}) {
     const router = express.Router();
 

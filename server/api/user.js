@@ -1,5 +1,10 @@
 const express = require('express');
 
+/**
+ * @constructor
+ * @param controllers
+ * @returns {Router}
+ */
 function create_user_router({controllers}) {
     const router = express.Router();
     router.post('/login',
