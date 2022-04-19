@@ -3,7 +3,7 @@ const ObjectId  = require('mongodb').ObjectID;
 async function create_package_database({client}) {
 
     const muallim = client.db('muallim');
-    const package = muallim.collection('package');
+    const packages = muallim.collection('package');
 
     return {
         get_all,
@@ -11,12 +11,12 @@ async function create_package_database({client}) {
     };
 
     async function get_all() {
-        return package.find().toArray();
+        return packages.find().toArray();
     }
 
     async function get_package_by_id({_id}) {
         console.log({_id})
-        return package.find({_id: new ObjectId(_id)}).toArray();
+        return packages.find({_id: new ObjectId(_id)}).toArray();
     }
 }
 
