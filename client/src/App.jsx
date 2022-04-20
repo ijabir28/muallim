@@ -12,6 +12,7 @@ function App() {
                 <Nav />
                 <Switch>
                 <Route path="/agency" component={Agency} />
+                <Route path="/blog" component={blog} />
                   
                 </Switch>
             </Router>

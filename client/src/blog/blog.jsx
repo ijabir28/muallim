@@ -1,186 +1,159 @@
-import {useEffect, useState} from "react";
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- header -->
+    
+    <!-- design -->
+    <section class = "design" id = "design">
+      <div class = "container">
+        <div class = "title">
+          <h2>Recent Arts & Designs</h2>
+          <p>recent arts & designs on the blog</p>
+        </div>
 
-export {agency};
-
-function agency() {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [agency, setagency] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:4000/api/agency/get")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setagency(result);
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [])
-
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-        return <div>Loading...</div>;
-    } else {
-        return (
-            <div className="App">
-                
-
-                <div className="carousel slide carousel-dark text-center"
-                     data-mdb-ride="carousel">
-                        <section id="pack" class="agency">
-                            <div class="container">
-                                <div class="gallary-header text-center">
-                                    <h1>Agency</h1>
-
-				                    <p>
-				                    	Most Popular Hajj Agency 2023 -2024 from Dhaka, Bangladesh
-				                    </p>
-			                    </div>
-			                    <div class="packages-content">
-			                    	<div class="row">
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="single-package-item">
-                                                <img src="assets/images/packages/p1.jpg" alt="package-place">
-                                                    <div class="single-package-item-txt">
-								            <h3> Air Touch Limited<span class="pull-right"> </h3>
-									            <div class="packages-para">
-										<h3>License No. 0002</h3>
-										<i class="fa fa-angle-right"></i>  Phone: 9031301,01713064642 <br>
-										 <i class="fa fa-angle-right"></i> HOUSE NO: 121, ROAD NO: 3, BLOK: A, SECTION: 12, MIRPUR, PALLABI, DHAKA-1216, BANGLADESH. <br>
-										<i class="fa fa-angle-right"></i> Email: airtouch.sharatati@gmail.com <br>
-										<br>
-									</div>				 
-
-								
-								<div class="packages-review">
-									<p>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<span>2544 review</span>
-									</p>
-								</div>
-								<div class="about-btn">
-									<button  class="about-view packages-btn">
-										<a href="https://prp.pilgrimdb.org/agencies/0002">Contact US</a>
-									</button>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				
-					<div class="col-md-4 col-sm-6">
-						<div class="single-package-item">
-							<img src="assets/images/packages/p1.jpg" alt="package-place">
-							<div class="single-package-item-txt">
-								<h3>Aftab Travels & Tours <span class="pull-right"> </h3>
-									
-								<div class="packages-para">
-									<h3>License No. 0003</h3>
-									<i class="fa fa-angle-right"></i>  Phone: 8362630,9348565,01711 242471 <br>
-								 	<i class="fa fa-angle-right"></i> 70, Nayapaltan, 3rd Floor, Dhaka-1000. <br>
-									<i class="fa fa-angle-right"></i> Email: mdashraf0203@yahoo.com <br>
-									<br>
-								</div>
-								<div class="packages-review">
-									<p>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<span>2544 review</span>
-									</p>
-								</div>
-								<div class="about-btn">
-									<button  class="about-view packages-btn">
-										<a href="https://prp.pilgrimdb.org/agencies/0003">Contact US</a>
-									</button>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="single-package-item">
-							<img src="assets/images/packages/p1.jpg" alt="package-place">
-							<div class="single-package-item-txt">
-								<h3>Air Trip International Ltd<span class="pull-right"> </span></h3>
-								<div class="packages-para">
-									<h3>License No. 0004</h3>
-									<i class="fa fa-angle-right"></i>  Phone: 9353512 <br>
-									<i class="fa fa-angle-right"></i>  City Heart, Suite # 5/3 (4th Floor), 67, Nayapaltan, VIP Road, Dhaka-1000.<br>
-									<i class="fa fa-angle-right"></i>  Email : airtrip@timesgroupbd.com <br><br>
-									
-								</div>
-								<div class="packages-review">
-									<p>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<span>2544 review</span>
-									</p>
-								</div>
-								<div class="about-btn">
-									<button  class="about-view packages-btn">
-										<a href="https://prp.pilgrimdb.org/agencies/0004">Contact US</a>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					        <div class="col-md-4 col-sm-6">
-					        	<div class="single-package-item">
-							        <img src="assets/images/packages/p1.jpg" alt="package-place">
-							    <div class="single-package-item-txt">
-								<h3>Air Bangla International Ltd.<span class="pull-right"> </span></h3>
-								            <div class="packages-para">
-								        	    <h3>License No. 0005</h3>
-								        	    <i class="fa fa-angle-right"></i>  Phone: 615858 <br>
-								        	    <i class="fa fa-angle-right"></i>  Hotel Golden Inn Building, 336, Station Road, Chittagong..<br>
-								        	    <i class="fa fa-angle-right"></i>  Email : airbangla@live.com <br><br>
-            
-								            </div>
-								                <div class="packages-review">
-									            <p>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-									            	<i class="fa fa-star"></i>
-									            	<i class="fa fa-star"></i>
-									            	<i class="fa fa-star"></i>
-									            	<span>2544 review</span>
-								            	</p>
-								                </div>
-								                    <div class="about-btn">
-									                    <button  class="about-view packages-btn">
-								                		<a href="https://prp.pilgrimdb.org/agencies/0004">Contact US</a>
-								                    	</button>
-								                    </div>
-							                    </div>
-					                    	</div>
-				                        </div>
-		                        	</div>
-		                        </div>
-
-	                </section>
-	
-                </div>
+        <div class = "design-content">
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-1.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 22</span>
+              <span>Art & Design</span>
             </div>
-        )
-    }
-}
+            <div class = "design-title">
+              <a href = "#">make an awesome art portfolio for college or university</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-2.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 22</span>
+              <span>Art & Design</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">make an awesome art portfolio for college or university</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-3.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 22</span>
+              <span>Art & Design</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">make an awesome art portfolio for college or university</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-4.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 22</span>
+              <span>Art & Design</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">make an awesome art portfolio for college or university</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-5.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 22</span>
+              <span>Art & Design</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">make an awesome art portfolio for college or university</a>
+            </div>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "design-item">
+            <div class = "design-img">
+              <img src = "images/art-design-6.jpg" alt = "">
+              <span><i class = "far fa-heart"></i> 22</span>
+              <span>Art & Design</span>
+            </div>
+            <div class = "design-title">
+              <a href = "#">make an awesome art portfolio for college or university</a>
+            </div>
+          </div>
+          <!-- end of item -->
+        </div>
+      </div>
+    </section>
+    <!-- end of design -->
 
+
+    <!-- blog -->
+    <section class = "blog" id = "blog">
+      <div class = "container">
+        <div class = "title">
+          <h2>Latest Blog</h2>
+          <p>recent blogs about art & design</p>
+        </div>
+        <div class = "blog-content">
+                 
+          
+          <div class = "blog-item">
+            <div class = "blog-img">
+              <img src = "assets/p1.jpg" alt = "">
+              <span><i class = "far fa-heart"></i></span>
+            </div>
+            <div class = "blog-text">
+              <span>20 April, 2022</span>
+              <h2>How to Perform Hajj – Your complete Step-by-Step Hajj Guide</h2>
+              <p>Billions of our Muslim brothers and sisters around the world have been undertaking Hajj each year since 629 CE following the migration of Prophet Muhammad (peace be upon him) from Medina to Makkah. For anyone preparing to go, it’s an incredibly exciting time but of course a deeply spiritual, serious and important period of our lives. This handy Hajj guide will help you understand the different aspects of the holy pilgrimage.</p>
+              <a href = "https://www.islamic-relief.org.uk/islamic-resources/hajj-in-islam/hajj-guide/">Read More</a>
+            </div>
+          </div>
+          <div class = "blog-item">
+            <div class = "blog-img">
+              <img src = "assets/p1.jpg" alt = "">
+              <span><i class = "far fa-heart"></i></span>
+            </div>
+            <div class = "blog-text">
+              <span>20 April, 2022</span>
+              <h2>How to Perform Hajj – Your complete Step-by-Step Hajj Guide</h2>
+              <p>Billions of our Muslim brothers and sisters around the world have been undertaking Hajj each year since 629 CE following the migration of Prophet Muhammad (peace be upon him) from Medina to Makkah. For anyone preparing to go, it’s an incredibly exciting time but of course a deeply spiritual, serious and important period of our lives. This handy Hajj guide will help you understand the different aspects of the holy pilgrimage.</p>
+              <a href = "https://www.itimaar.co.uk/hajj-guide">Read More</a>
+            </div>
+          </div>
+          <div class = "blog-item">
+            <div class = "blog-img">
+              <img src = "assets/p3.jpg" alt = "">
+              <span><i class = "far fa-heart"></i></span>
+            </div>
+            <div class = "blog-text">
+              <span>20 April, 2022</span>
+              <h2>Comprehensive Hajj Guide</h2>
+              <p> Hajj is the fifth pillar of Islam and an obligatory duty for every Muslim if he/she is financially and physically capable of undertaking it. Every year millions of Muslims gather in Makkah between 8th and 12th Dhul Hijjah to fulfill their duty to Allah (SWT). Pilgrims go through physically-demanding activities (rituals) and seek forgiveness from Allah. Hajj boosts trust and love for the Creator Allah (SWT) and His Messenger (pbuh). It reminds a believer about his obligation to Him and to rely on His plan with complete mind, heart and soul.
+
+The historical roots of Hajj go back to the times of Prophet Ibrahim (AS) when Allah ordered him to leave his wife Hajira (RA) and son Ismail (AS) in the deserts of Makkah. Hajira (RA) ran desperately between the mountains of Safa and Marwa in search of water for her son but she found nothing. On her return to her son, she found the baby scratching the ground and a water fountain sprang forth. Prophet Ibrahim (AS) was later commanded by Allah (SWT) to build Kaabah here and invite people to pilgrimage.
+Prophet Mohammad (pbuh) performed Hajj with his companions in 630 CE when he travelled from Medina to Mecca for the annual pilgrimage. </p>
+              <a href = "https://www.itimaar.co.uk/hajj-guide">Read More</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+
+
+  </body>
+</html>

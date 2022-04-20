@@ -8,6 +8,7 @@ function Nav() {
             <div className="navbar-nav nav-item">
                 
                 <NavLink exact to="/agency" className="nav-item nav-link">Agency</NavLink>
+                <NavLink exact to="/blog" className="nav-item nav-link">blog</NavLink>
             </div>   
         </nav>
     );
